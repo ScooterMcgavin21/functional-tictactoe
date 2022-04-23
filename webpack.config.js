@@ -1,11 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
+
 const plugins = [
   new CleanWebpackPlugin(),
+  new ESLintPlugin(),
   new HtmlWebpackPlugin({
-    template: './src/index.html'
-  })
+    template: './src/index.html',
+  }),
 ];
 
 let mode = 'development';
@@ -14,11 +17,11 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 module.exports = {
-  mode: mode,
+  mode,
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
 
   module: {
@@ -26,23 +29,21 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-        }
-      }
-    ]
+        loader: 'babel-loader',
+      },
+    ],
   },
 
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
   },
 
-  plugins: plugins,
+  plugins,
 
   devtool: 'source-map',
   devServer: {
     static: './dist',
     hot: true,
-    open: true
-  }
+    open: true,
+  },
 };
