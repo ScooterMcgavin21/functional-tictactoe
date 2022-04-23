@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "node": true
   },
   "extends": ["plugin:react/recommended", "airbnb"],
   "parserOptions": {
@@ -16,11 +17,11 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/react-in-jsx-scope": "off",
     "no-unused-vars": ["off", { "vars": "local" }],
-    "indent": ["warn", 2],
-    "quotes": ["warn", "single"],
+    "jsx-quotes": ["error", "prefer-single"],
+    "quotes": ["error", "single"],
     "prefer-const": "warn",
     "semi": ["warn", "always"],
-    "react/prop-types": "off",
-    "react/jsx-key": "warn"
+    "react/jsx-key": "warn",
+    "indent": "off"
   }
 }

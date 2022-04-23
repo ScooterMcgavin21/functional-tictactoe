@@ -1,7 +1,8 @@
 import React from 'react';
+import Box from './components/Box';
 
 function App() {
-  return <h1>App</h1>;
+  return <Box />;
 }
 
 export default App;
