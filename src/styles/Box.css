@@ -1,6 +1,9 @@
-.square {
+.Box {
   box-sizing: border-box;
   min-width: 100px;
   min-height: 100px;
   border: solid 1px black;
+  color: #424242;
+  background: aqua;
+  font-weight: bold;
 }

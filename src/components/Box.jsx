@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/Box.css';
 // const props = {
 //   handleClick: () => function,
@@ -8,9 +8,11 @@ import '../styles/Box.css';
 // const {display} = props;
 
 function Box(display, handleClick) {
+  const [playerMark, setPlayerMark] = useState('X');
   return (
-    <button type='button' onClick={handleClick}>
-      {display}
+    <button className='Box' type='button' onClick={handleClick}>
+      {/* {display} */}
+      {playerMark}
     </button>
   );
 }
