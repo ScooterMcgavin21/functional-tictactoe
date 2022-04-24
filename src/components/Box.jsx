@@ -24,6 +24,9 @@ function Box(display, handleClick) {
     } else {
       setPlayerMark('X');
     }
+    // let oldValue = playerMark;
+    // let newValue = oldValue === 'X' ? 'O' : 'X';
+    // setPlayerMark(newValue);
   };
 
   // useEffect(() => {
