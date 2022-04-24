@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/Box.css';
 // const props = {
 //   handleClick: () => function,
@@ -9,6 +9,22 @@ import '../styles/Box.css';
 
 function Box(display, handleClick) {
   const [playerMark, setPlayerMark] = useState('X');
+
+  const swap = () => {
+    if (playerMark === 'X') {
+      setPlayerMark('O');
+    } else {
+      setPlayerMark('X');
+    }
+  };
+
+  useEffect(() => {
+    const timerID = setInterval(() => swap(), 300);
+    return () => {
+      clearInterval(timerID);
+    };
+  }, [playerMark]);
+
   return (
     <button className='Box' type='button' onClick={handleClick}>
       {/* {display} */}

@@ -11,3 +11,8 @@ This repository is for a fellow nerd learning react. The assignment uses class b
 - [x] Give Box some style! Make it a button with height 100px and width 100px.
 
 - [x] Have Box render text based on its state.
+
+- [ ] Have Box's state change every 300ms, alternating between 'X' and 'O'.
+  - Where should this be written?
+  - This is a good moment to learn about the component cycle!
+  - Make sure to clear your interval!
