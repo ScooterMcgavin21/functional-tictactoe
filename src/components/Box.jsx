@@ -8,9 +8,17 @@ import '../styles/Box.css';
 // const {display} = props;
 
 function Box(display, handleClick) {
-  const [playerMark, setPlayerMark] = useState('X');
+  const [playerMark, setPlayerMark] = useState('-');
 
-  const swap = () => {
+  // const swap = () => {
+  //   if (playerMark === 'X') {
+  //     setPlayerMark('O');
+  //   } else {
+  //     setPlayerMark('X');
+  //   }
+  // };
+
+  const handleClickx = () => {
     if (playerMark === 'X') {
       setPlayerMark('O');
     } else {
@@ -18,15 +26,15 @@ function Box(display, handleClick) {
     }
   };
 
-  useEffect(() => {
-    const timerID = setInterval(() => swap(), 300);
-    return () => {
-      clearInterval(timerID);
-    };
-  }, [playerMark]);
+  // useEffect(() => {
+  //   const timerID = setInterval(() => swap(), 300);
+  //   return () => {
+  //     clearInterval(timerID);
+  //   };
+  // }, [playerMark]);
 
   return (
-    <button className='Box' type='button' onClick={handleClick}>
+    <button className='Box' type='button' onClick={handleClickx}>
       {/* {display} */}
       {playerMark}
     </button>
